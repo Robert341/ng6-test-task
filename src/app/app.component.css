@@ -1,0 +1,22 @@
+/* in focus */
+.active {
+  margin-left: 20px;
+}
+/* valid - green dot */
+input.ng-valid {
+  background-color: green;
+}
+/* invalid - red dot */
+input.ng-invalid, input.invalid {
+  background-color: red;
+}
+/* this invalid state property works only when submitted */
+input.checked.ng-invalid {
+  border: 1px solid red;
+}
+/* Initial settings, "don't show invalid untill something is typed" */
+input, input.ng-pristine {
+  border-radius: 5px;
+  outline: none;
+  background-color: white;
+}

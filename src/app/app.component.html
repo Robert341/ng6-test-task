@@ -1,38 +1,24 @@
 <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
-  <div class="form-group">
-    <label>First name
-      <input type="text" class="form-control" placeholder="First name..." formControlName="firstName">
-    </label>
+  <div>
+    <input type="text" [ngClass]="{ 'active': active.firstName, 'checked': checked }" placeholder="First name..." formControlName="firstName" (focus)="active.firstName = true" (blur)="active.firstName = false">
   </div>
-  <div class="form-group">
-    <label>Last name
-      <input type="text" class="form-control" placeholder="Last name..." formControlName="lastName">
-    </label>
+  <div>
+    <input type="text" [ngClass]="{ 'active': active.lastName, 'checked': checked }" placeholder="Last name..." formControlName="lastName" (focus)="active.lastName = true" (blur)="active.lastName = false">
   </div>
-  <div class="form-group">
-    <label>E-mail
-      <input type="text" class="form-control" placeholder="Your email..." formControlName="email">
-    </label>
+  <div>
+    <input type="text" [ngClass]="{ 'active': active.email, 'checked': checked }" placeholder="Your email..." formControlName="email" (focus)="active.email = true" (blur)="active.email = false">
   </div>
-  <div class="form-group">
-    <label>Area code 1
-      <input type="text" class="form-control" placeholder="Area code..." formControlName="areaCode1">
-    </label>
+  <div>
+    <input type="text" [ngClass]="{ 'active': active.areaCode1, 'checked': checked }" placeholder="Area code..." formControlName="areaCode1" (focus)="active.areaCode1 = true" (blur)="active.areaCode1 = false">
   </div>
-  <div class="form-group">
-    <label>Area code 2
-      <input type="text" class="form-control" placeholder="Area code..." formControlName="areaCode2">
-    </label>
+  <div>
+    <input type="text" [ngClass]="{ 'active': active.areaCode2, 'checked': checked }" placeholder="Area code..." formControlName="areaCode2" (focus)="active.areaCode2 = true" (blur)="active.areaCode2 = false">
   </div>
-  <div class="form-group">
-    <label>Password
-      <input type="password" class="form-control" placeholder="Password..." formControlName="pass">
-    </label>
+  <div>
+    <input type="text" [ngClass]="{ 'active': active.pass, 'checked': checked }" placeholder="Password..." formControlName="pass" (focus)="active.pass = true" (blur)="active.pass = false">
   </div>
-  <div class="form-group">
-    <label>Re-Enter
-      <input type="password" class="form-control" placeholder="Password..." formControlName="rePass">
-    </label>
+  <div>
+    <input type="text" [ngClass]="{ 'active': active.rePass, 'checked': checked, 'invalid': registerForm.value.pass !== registerForm.value.rePass }" placeholder="Password..." formControlName="rePass" (focus)="active.rePass = true" (blur)="active.rePass = false">
   </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
+  <button type="submit">Submit</button>
 </form>
