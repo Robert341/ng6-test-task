@@ -1,24 +1,31 @@
-<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
-  <div>
-    <input type="text" [ngClass]="{ 'active': active.firstName, 'checked': checked }" placeholder="First name..." formControlName="firstName" (focus)="active.firstName = true" (blur)="active.firstName = false">
-  </div>
-  <div>
-    <input type="text" [ngClass]="{ 'active': active.lastName, 'checked': checked }" placeholder="Last name..." formControlName="lastName" (focus)="active.lastName = true" (blur)="active.lastName = false">
-  </div>
-  <div>
-    <input type="text" [ngClass]="{ 'active': active.email, 'checked': checked }" placeholder="Your email..." formControlName="email" (focus)="active.email = true" (blur)="active.email = false">
-  </div>
-  <div>
-    <input type="text" [ngClass]="{ 'active': active.areaCode1, 'checked': checked }" placeholder="Area code..." formControlName="areaCode1" (focus)="active.areaCode1 = true" (blur)="active.areaCode1 = false">
-  </div>
-  <div>
-    <input type="text" [ngClass]="{ 'active': active.areaCode2, 'checked': checked }" placeholder="Area code..." formControlName="areaCode2" (focus)="active.areaCode2 = true" (blur)="active.areaCode2 = false">
-  </div>
-  <div>
-    <input type="text" [ngClass]="{ 'active': active.pass, 'checked': checked }" placeholder="Password..." formControlName="pass" (focus)="active.pass = true" (blur)="active.pass = false">
-  </div>
-  <div>
-    <input type="text" [ngClass]="{ 'active': active.rePass, 'checked': checked, 'invalid': registerForm.value.pass !== registerForm.value.rePass }" placeholder="Password..." formControlName="rePass" (focus)="active.rePass = true" (blur)="active.rePass = false">
-  </div>
-  <button type="submit">Submit</button>
-</form>
+<header class="header">
+
+</header>
+
+<main>
+  <section class="content">
+      <h3>Good choice! Let's get started</h3>
+      <p>You've been redirected to the appropriate jurisdiction. Already have an account? You can <a href="#">sign in here</a>.</p>
+      <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+        <input type="text" [ngClass]="{ 'active': active.firstName, 'checked': checked }" placeholder="First name..." formControlName="firstName" (focus)="active.firstName = true" (blur)="active.firstName = false">
+        <input type="text" [ngClass]="{ 'active': active.lastName, 'checked': checked }" placeholder="Last name..." formControlName="lastName" (focus)="active.lastName = true" (blur)="active.lastName = false">
+        <input type="text" [ngClass]="{ 'active': active.email, 'checked': checked }" placeholder="Your email..." formControlName="email" (focus)="active.email = true" (blur)="active.email = false">
+        <input type="text" [ngClass]="{ 'active': active.areaCode1, 'checked': checked }" placeholder="Area code..." formControlName="areaCode1" (focus)="active.areaCode1 = true" (blur)="active.areaCode1 = false">
+        <input type="text" [ngClass]="{ 'active': active.areaCode2, 'checked': checked }" placeholder="Area code..." formControlName="areaCode2" (focus)="active.areaCode2 = true" (blur)="active.areaCode2 = false">
+        <input type="text" [ngClass]="{ 'active': active.pass, 'checked': checked }" placeholder="Password..." formControlName="pass" (focus)="active.pass = true" (blur)="active.pass = false">
+        <input type="text" [ngClass]="{ 'active': active.rePass, 'checked': checked, 'invalid': registerForm.value.pass !== registerForm.value.rePass }" placeholder="Password..." formControlName="rePass" (focus)="active.rePass = true" (blur)="active.rePass = false">
+        <span class="password-hint">Password must be 8 digits minimum and include at  least 1 capital letter.</span>
+        <div class="btn-container">
+          <button type="submit" class="submit-btn">SUBMIT</button>
+        </div>
+      </form>
+      <div class="agreement-text">
+        <p>
+          <b>By clicking submit</b> lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
+          venenatis maximus torotr. Vivamus nec <a href="#">turpis porta</a>, <a href="#">mollis odio et</a>, und <a href="#">pellentesque
+          lectus</a>. Aliquam diam lectus, gravida feugiat sapien vitae, <a href="#">bibendum placerat ex</a>. Cras
+          aliquam enim nec diam imperdiet, facilisis palcerat nulla pharetra.
+        </p>
+      </div>
+  </section>
+</main>
