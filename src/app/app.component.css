@@ -1,11 +1,3 @@
-/* valid - green dot */
-input.ng-valid {
-  background-color: green;
-}
-/* invalid - red dot */
-input.ng-invalid, input.invalid {
-  background-color: red;
-}
 /* this invalid state property works only when submitted */
 input.checked.ng-invalid {
   border: 1px solid red;
@@ -97,4 +89,23 @@ a {
   font-size: 13px;
   color: #A1A1A1;
   margin-top: 5px;
+}
+
+.input-box {
+  line-height: 35px;
+}
+
+.input-box-inline input {
+  width: 165px;
+}
+
+.dot {
+  position: relative;
+  right: 30px;
+  bottom: 4px;
+  height: 3px;
+  width: 3px;
+  background-color: red;
+  border-radius: 50%;
+  display: inline-block;
 }

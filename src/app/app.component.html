@@ -1,19 +1,40 @@
-<header class="header">
-
-</header>
+<header class="header"></header>
 
 <main>
   <section class="content">
       <h3>Good choice! Let's get started</h3>
       <p>You've been redirected to the appropriate jurisdiction. Already have an account? You can <a href="#">sign in here</a>.</p>
       <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
-        <input type="text" [ngClass]="{ 'active': active.firstName, 'checked': checked }" placeholder="First name..." formControlName="firstName" (focus)="active.firstName = true" (blur)="active.firstName = false">
-        <input type="text" [ngClass]="{ 'active': active.lastName, 'checked': checked }" placeholder="Last name..." formControlName="lastName" (focus)="active.lastName = true" (blur)="active.lastName = false">
-        <input type="text" [ngClass]="{ 'active': active.email, 'checked': checked }" placeholder="Your email..." formControlName="email" (focus)="active.email = true" (blur)="active.email = false">
-        <input type="text" [ngClass]="{ 'active': active.areaCode1, 'checked': checked }" placeholder="Area code..." formControlName="areaCode1" (focus)="active.areaCode1 = true" (blur)="active.areaCode1 = false">
-        <input type="text" [ngClass]="{ 'active': active.areaCode2, 'checked': checked }" placeholder="Area code..." formControlName="areaCode2" (focus)="active.areaCode2 = true" (blur)="active.areaCode2 = false">
-        <input type="text" [ngClass]="{ 'active': active.pass, 'checked': checked }" placeholder="Password..." formControlName="pass" (focus)="active.pass = true" (blur)="active.pass = false">
-        <input type="text" [ngClass]="{ 'active': active.rePass, 'checked': checked, 'invalid': registerForm.value.pass !== registerForm.value.rePass }" placeholder="Password..." formControlName="rePass" (focus)="active.rePass = true" (blur)="active.rePass = false">
+        <div class="input-box">
+          <input type="text" [ngClass]="{ 'active': active.firstName, 'checked': checked }" placeholder="First name..." formControlName="firstName" (focus)="active.firstName = true" (blur)="active.firstName = false">
+          <span class="dot" *ngIf="!active.firstName" [style.background-color]="registerForm.controls['firstName'].invalid ? 'red' : 'green'"></span>
+        </div>
+        <div class="input-box">
+          <input type="text" [ngClass]="{ 'active': active.lastName, 'checked': checked }" placeholder="Last name..." formControlName="lastName" (focus)="active.lastName = true" (blur)="active.lastName = false">
+          <span class="dot" *ngIf="!active.lastName" [style.background-color]="registerForm.controls['lastName'].invalid ? 'red' : 'green'"></span>
+        </div>
+        <div class="input-box">
+          <input type="text" [ngClass]="{ 'active': active.email, 'checked': checked }" placeholder="Your email..." formControlName="email" (focus)="active.email = true" (blur)="active.email = false">
+          <span class="dot" *ngIf="!active.email" [style.background-color]="registerForm.controls['email'].invalid ? 'red' : 'green'"></span>
+        </div>
+        <div>
+          <span class="input-box-inline">
+            <input type="text" [ngClass]="{ 'active': active.areaCode1, 'checked': checked }" placeholder="Area code..." formControlName="areaCode1" (focus)="active.areaCode1 = true" (blur)="active.areaCode1 = false">
+            <span class="dot" *ngIf="!active.areaCode1" [style.background-color]="registerForm.controls['areaCode1'].invalid ? 'red' : 'green'"></span>
+          </span>
+          <span class="input-box-inline">
+            <input type="text" [ngClass]="{ 'active': active.areaCode2, 'checked': checked }" placeholder="Area code..." formControlName="areaCode2" (focus)="active.areaCode2 = true" (blur)="active.areaCode2 = false">
+            <span class="dot" *ngIf="!active.areaCode2" [style.background-color]="registerForm.controls['areaCode2'].invalid ? 'red' : 'green'"></span>
+          </span>
+        </div>
+        <div class="input-box">
+          <input type="password" [ngClass]="{ 'active': active.pass, 'checked': checked }" placeholder="Password..." formControlName="pass" (focus)="active.pass = true" (blur)="active.pass = false">
+          <span class="dot" *ngIf="!active.pass" [style.background-color]="registerForm.controls['pass'].invalid ? 'red' : 'green'"></span>
+        </div>
+        <div class="input-box">
+          <input type="password" [ngClass]="{ 'active': active.rePass, 'checked': checked, 'invalid': registerForm.value.pass !== registerForm.value.rePass }" placeholder="Password..." formControlName="rePass" (focus)="active.rePass = true" (blur)="active.rePass = false">
+          <span class="dot" *ngIf="!active.rePass" [style.background-color]="registerForm.controls['rePass'].invalid || registerForm.value.pass !== registerForm.value.rePass ? 'red' : 'green'"></span>
+        </div>
         <span class="password-hint">Password must be 8 digits minimum and include at  least 1 capital letter.</span>
         <div class="btn-container">
           <button type="submit" class="submit-btn">SUBMIT</button>
