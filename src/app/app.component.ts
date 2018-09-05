@@ -15,8 +15,8 @@ export class AppComponent implements OnInit {
     email: false,
     areaCode1: false,
     areaCode2: false,
+    country: false,
     pass: false,
-    rePass: false,
   };
 
   checked = false;
@@ -34,15 +34,15 @@ export class AppComponent implements OnInit {
       email: [null, [Validators.required, Validators.pattern(/^[a-zA-Z0-9_.-]+@+[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]{2,4}$/)]],
       areaCode1: [null, Validators.required],
       areaCode2: [null, Validators.required],
-      pass: [null, [Validators.required, Validators.pattern(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/)]],
-      rePass: [null, Validators.required]
+      country: [null, [Validators.required, Validators.pattern(/^[A-Z][a-z]+$/)]],
+      pass: [null, [Validators.required, Validators.pattern(/^(?=.*?[A-Z]).{8,}$/)]]
     });
   }
 
   onSubmit() {
     this.checked = true;
 
-    if (this.registerForm.valid && this.registerForm.value.pass === this.registerForm.value.rePass) {
+    if (this.registerForm.valid) {
       window.location.reload();
     }
   }

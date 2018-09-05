@@ -34,12 +34,12 @@
           </span>
         </div>
         <div class="input-box">
-          <input type="password" [ngClass]="{ 'active': active.pass, 'checked': checked }" placeholder="Password..." formControlName="pass" (focus)="active.pass = true" (blur)="active.pass = false">
-          <span class="dot" *ngIf="!active.pass" [style.background-color]="registerForm.controls['pass'].invalid ? 'red' : 'green'"></span>
+          <input type="text" [ngClass]="{ 'active': active.country, 'checked': checked }" placeholder="Your country..." formControlName="country" (focus)="active.country = true" (blur)="active.country = false">
+          <span class="dot" *ngIf="!active.country" [style.background-color]="registerForm.controls['country'].invalid || registerForm.value.country !== registerForm.value.country ? 'red' : 'green'"></span>
         </div>
         <div class="input-box">
-          <input type="password" [ngClass]="{ 'active': active.rePass, 'checked': checked, 'invalid': registerForm.value.pass !== registerForm.value.rePass }" placeholder="Password..." formControlName="rePass" (focus)="active.rePass = true" (blur)="active.rePass = false">
-          <span class="dot" *ngIf="!active.rePass" [style.background-color]="registerForm.controls['rePass'].invalid || registerForm.value.pass !== registerForm.value.rePass ? 'red' : 'green'"></span>
+          <input type="password" [ngClass]="{ 'active': active.pass, 'checked': checked }" placeholder="Password..." formControlName="pass" (focus)="active.pass = true" (blur)="active.pass = false">
+          <span class="dot" *ngIf="!active.pass" [style.background-color]="registerForm.controls['pass'].invalid ? 'red' : 'green'"></span>
         </div>
         <span class="password-hint">Password must be 8 digits minimum and include at  least 1 capital letter.</span>
         <div class="btn-container">
